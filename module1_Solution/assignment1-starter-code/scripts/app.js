@@ -1,5 +1,5 @@
 (function(){
-//'use strict';
+'use strict';
 angular.module('LunchApp',[])
 .controller('CheckIfTooMuch_Controller', LunchCheckController);
 
@@ -7,7 +7,7 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope){
   $scope.checkIfTooMuch = function(){
     var txtLunchMenuValue = $scope.txtLunchMenu;
-    if(istxtLunchMenuValueEmpty(txtLunchMenuValue)){
+    if($scope.istxtLunchMenuValueEmpty(txtLunchMenuValue)){
       $scope.message_LunchStatus = "Please enter data first";
       $scope.message_NonEmptyValue_LunchStatus = "Please enter data first";
       //if the text box is empty make the color red
@@ -37,28 +37,29 @@ function LunchCheckController($scope){
     }else {
       $scope.message_LunchStatus = "Enjoy!";
     }
-    var txtLunchMenuNonEmptyValuesCount = getCountEliminatingEmptyArrayValues(txtLunchMenuSplitValue);
+    var txtLunchMenuNonEmptyValuesCount = $scope.getCountEliminatingEmptyArrayValues(txtLunchMenuSplitValue);
     if(txtLunchMenuNonEmptyValuesCount > 3){
       $scope.message_NonEmptyValue_LunchStatus = "Too Much";
     }else {
       $scope.message_NonEmptyValue_LunchStatus = "Enjoy!";
     }
-
   }
+
   //Function that gets count of array - Eliminates all empty values in an array
-  getCountEliminatingEmptyArrayValues = function(txtLunchMenuSplitValue) {
+  $scope.getCountEliminatingEmptyArrayValues = function(txtLunchMenuSplitValue) {
     var txtLunchMenuSplitCount = txtLunchMenuSplitValue.length;
     var nonEmptyStringCount =0;
     for (var i =0 ; i < txtLunchMenuSplitCount; i++){
-      if(!istxtLunchMenuValueEmpty(txtLunchMenuSplitValue[i])){
+      if(!$scope.istxtLunchMenuValueEmpty(txtLunchMenuSplitValue[i])){
         nonEmptyStringCount++;
       }
     }
     return nonEmptyStringCount;
   }
+
   //checking if a String is Empty
-  istxtLunchMenuValueEmpty = function(txtLunchMenuValue){
-      return (!txtLunchMenuValue || 0 === txtLunchMenuValue.length);
+  $scope.istxtLunchMenuValueEmpty = function(txtLunchMenuValue){
+    return (!txtLunchMenuValue || 0 === txtLunchMenuValue.length);
   }
 }
 
