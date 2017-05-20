@@ -10,28 +10,40 @@ function LunchCheckController($scope){
     if($scope.istxtLunchMenuValueEmpty(txtLunchMenuValue)){
       $scope.message_LunchStatus = "Please enter data first";
       $scope.message_NonEmptyValue_LunchStatus = "Please enter data first";
+      /*
+      used with ng-style property
       //if the text box is empty make the color red
       $scope.customColor = {
         "color":"red"
       }
       //setting border color for text box to red
+
       $scope.customTextBoxBorder={
         "border": "solid 1px red"
       }
+      */
+      $scope.message_Class = "red";
+      $scope.textbox_border = "redBorder";
       return;
     }
 
     var txtLunchMenuSplitValue = txtLunchMenuValue.split(",");
     var txtLunchMenuSplitCount = txtLunchMenuSplitValue.length;
 
+    /*
     //if the text box is NOT empty make the color green
     $scope.customColor = {
       "color":"green"
     }
     //setting border color for text box to green
+
     $scope.customTextBoxBorder={
       "border": "solid 1px green"
     }
+    */
+    $scope.message_Class = "green";
+    $scope.textbox_border = "greenBorder";
+
     if(txtLunchMenuSplitCount > 3){
       $scope.message_LunchStatus = "Too Much";
     }else {
