@@ -35,7 +35,7 @@
      <ul>
        <!-- <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
        <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li> -->
-       <li ng-repeat="item in toBuyList.availableToBuyList">Buy {{item.quantity}} {{item.name}}
+       <li ng-repeat="item in toBuyList.availableToBuyList">Buy {{item.quantity}} of {{item.name}}
           <button class="btn btn-default"
               ng-click="toBuyList.addToAlreadyBoughtList($index)"
               ng-click='alreadyBoughtList.boughtList'>
