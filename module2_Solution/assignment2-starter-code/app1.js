@@ -86,4 +86,12 @@ function ShoppingListCheckerServiceProvider() {
 http://errors.angularjs.org/1.5.7/$injector/unpr?p0=ShoppingListCheckOffServiceProvider
 %20%3C-%20ShoppingListCheckOffService%20%3C-%20ShoppingList_AlreadyBoughtController
 
+https://c2bsarav.github.io/CourseEra_Angular/module2_Solution/assignment2-starter-code/index.html
+
+Shopping Check List
+
+It will list 5 items under "To Buy". when you click the check box button, it will add to "Already Bought List".
+During the initial load, when "Already Bought" list is empty, it will display "Nothing Bought Yet"
+When "To Buy" List is empty, it will display "Everything is Bought".
+
 */
