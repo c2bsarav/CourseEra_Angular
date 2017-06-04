@@ -1,0 +1,14 @@
+<!-- LIST OF ITEMS -->
+  <ul>
+    <li class="item" ng-repeat="item in $ctrl.items.data.menu_items">
+      <div id="itemTitle">
+        {{ item.name }} ({{ item.short_name }})
+      </div>
+      <div class="itemDetais">
+        {{ item.description }}
+      </div>
+      <div class="itemBottom">
+        Price: <span>{{ item.price_small | currency }}</span> (small) / <span>{{ item.price_large | currency }}</span> (large)
+      </div>
+    </li>
+  </ul>

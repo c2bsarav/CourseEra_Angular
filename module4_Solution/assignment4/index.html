@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>REST API</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <ui-view></ui-view>
+    </div>
+
+    <loading-spinner></loading-spinner>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/spinner/spinner.module.js"></script>
+    <script src="src/data/data.module.js"></script>
+    <script src="src/menu/menuapp.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'Data' module artifacts -->
+    <script src="src/data/menudata.service.js"></script>
+
+    <!-- 'Menu' module artifacts -->
+    <script src="src/menu/categories.component.js"></script>
+    <script src="src/menu/items.component.js"></script>
+    <script src="src/menu/menu.controller.js"></script>
+    <script src="src/menu/category.controller.js"></script>
+
+  </body>
+</html>

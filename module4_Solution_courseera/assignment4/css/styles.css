@@ -1,0 +1,139 @@
+body {
+  font-size: 16px;
+  text-align: center;
+  /*background-color: #bcd;*/
+  background-color: #0F8AAD;
+  padding: 20px;
+  position: relative;
+}
+
+h1, h2, h3 {
+  margin: 30px auto;
+  font-weight: bold;
+}
+
+ul {
+  position: relative;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.menu {
+  position: relative;
+  display: block;
+  font-size: 1.2em;
+}
+.menu span {
+  vertical-align: middle;
+}
+
+.about {
+  margin-top: 30px;
+  text-indent: 50px;
+  text-align: center;
+}
+
+.main {
+  position: relative;
+  /*background-color: #7ac;*/
+  background-color: #0FA9AD;
+  font-size: .9em;
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: inset 0 0 20px #444;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  vertical-align: middle;
+  margin: 20px;
+  border-radius: 8px;
+  border-width: 0;
+  padding: 10px 20px;
+  box-shadow: inset 0 0 10px #479, 0 0 20px #9ce;
+  cursor: default;
+}
+
+.main-content {
+  display: block;
+  margin: 20px 5px 5px 5px;
+  padding: 20px;
+  box-shadow: inset 0 0 50px #333, 0 0 10px #000;
+}
+
+.category {
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 5px 5px 10px #555;
+}
+.category:hover {
+  color: #222;
+  cursor: pointer;
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 300px;
+  min-width: 300px;
+  height: 120px;
+  margin: 5px 10px;
+  border: solid 1px #000;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color: #ddf;
+  color: #237;
+  box-shadow: 5px 5px 10px #446;
+}
+#itemTitle {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.1em;
+  font-weight: bold;
+  /*color: #2222;
+   background-color: #abe;
+  */
+  color: #AD210F;
+  background-color: #9DAD0F;
+  padding: 0 5px;
+  overflow: hidden;
+  /*text-shadow: 1px 1px #000;*/
+}
+.itemDetais {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  clear: both;
+  font-size: 0.9em;
+}
+.itemBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  /*background-color: #bbc;*/
+  background-color: #0FADA9;
+}
+.itemBottom span {
+  font-weight: bold;
+}
+
+a {
+  vertical-align: middle;
+  color: #024;
+}
+a:hover, a:visited {
+  text-decoration: none;
+}
