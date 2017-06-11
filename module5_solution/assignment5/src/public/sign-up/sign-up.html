@@ -1,0 +1,94 @@
+
+<div class="container">
+  <h2 id="sign-up-title" class="text-center">Sign Up for Newsletter!</h2>
+  <div class="text-center">
+    Sign up for receiving special info such as announcements for new dishes or eventual promotions. We promise not to spam! :)
+  </div>
+
+  <fieldset>
+    <form ng-if="!signup.completed" id="signForm" name="signForm" novalidate>
+      <div class="inputField">
+        <input type="text" name="firstName"
+          placeholder="First Name"
+          ng-model="signup.user.firstName"
+          required
+          minlength="2"
+          ng-maxLength="15"><br>
+        <span
+          ng-if="(signForm.firstName.$error.minlength ||  signForm.firstName.$error.required) && signForm.firstName.$touched">
+            Min. 2 characters
+        </span>
+        <span ng-if="signForm.firstName.$error.maxlength && signForm.firstName.$touched">
+          Max. 15 characters
+        </span>
+      </div>
+      <div class="inputField">
+        <input type="text" name="lastName"
+          placeholder="Last Name"
+          ng-model="signup.user.lastName"
+          required minlength="2" ng-maxLength="15"><br>
+        <span
+          ng-if="(signForm.lastName.$error.minlength ||  signForm.lastName.$error.required) && signForm.lastName.$touched">
+            Min. 2 characters
+        </span>
+        <span ng-if="signForm.lastName.$error.maxlength && signForm.lastName.$touched">
+          Max. 15 characters
+        </span>
+      </div>
+
+      <br class="visible-sm visible-xs">
+      <div class="inputField">
+        <input type="email" name="email"
+          placeholder="Email (user@domain)"
+          ng-model="signup.user.email"
+          required><br>
+        <span ng-if="signForm.email.$invalid && signForm.email.$touched">
+          Format: user@domain
+        </span>
+      </div>
+
+      <br class="visible-lg visible-md">
+      <div class="inputField">
+        <input type="text" name="phone"
+          placeholder="Phone Number"
+          ng-model="signup.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})"><br>
+        <span ng-if="signForm.phone.$invalid && signForm.phone.$touched">
+          Format: ###-###-####
+        </span>
+      </div>
+
+      <div class="inputField">
+        <input type="text" name="fave" class="faveInput"
+          placeholder="Fave Item's Code"
+          ng-model="signup.user.fave"
+          ng-keyup="signup.faveSearch();"
+          required minlength="2" ng-maxLength="4"><br>
+        <span
+          ng-if="(signForm.fave.$error.minlength || signForm.fave.$error.required) && signForm.fave.$touched">
+            Min. 2 characters
+        </span>
+        <span
+          ng-if="signForm.fave.$error.maxlength && signForm.fave.$touched">
+            Max. 4 characters
+        </span>
+        <span ng-if="signForm.fave.$touched && signup.faveNotFound();">No such menu number exists.</span>
+      </div>
+
+      <br class="visible-sm visible-xs">
+      <button type="submit" class="submit regSubmit"
+        ng-disabled="signForm.$invalid" ng-click="signup.submit()">Submit</button>
+
+    </form>
+  </fieldset>
+
+  <div id="savedInfo" ng-if="signup.completed" class="text-center">Your information has been saved.</div>
+
+  <div ng-if="!signup.completed">
+    <sign-up-item
+      ng-repeat="item in signup.faves"
+      item="item"
+      set-fave="signup.setFave(fave)">
+    </sign-up-item>
+  </div>
+
+</div>

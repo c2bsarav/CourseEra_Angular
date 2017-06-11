@@ -1,0 +1,64 @@
+
+<div class="container">
+  <h2 id="my-info-title" class="text-center">My Info</h2>
+
+  <div class="text-center" ng-if="!myinfo.isSigned();">
+    <a ui-sref="public.signup">Not Signed Up Yet. Sign up Now!</a>
+  </div>
+
+  <fieldset>
+    <form id="userForm" ng-if="myinfo.isSigned();"
+      name="userForm" novalidate>
+      <div class="inputField">
+        <span>First Name:</span><br>
+        <input type="text" name="firstName" disabled
+          ng-model="myinfo.user.firstName">
+      </div>
+      <div class="inputField">
+        <span>Last Name:</span><br>
+        <input type="text" name="lastName" disabled
+          ng-model="myinfo.user.lastName">
+      </div>
+
+      <br class="visible-sm visible-xs">
+      <div class="inputField">
+        <span>Email:</span><br>
+        <input type="email" name="email" disabled
+          ng-model="myinfo.user.email">
+      </div>
+
+      <div class="inputField">
+        <span>Phone Number:</span><br>
+        <input type="text" name="phone" disabled
+          ng-model="myinfo.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+      </div>
+
+      <!-- <div class="inputField">
+        <span>Favorite Item:</span><br>
+        <input type="text" name="fave" disabled
+          placeholder="Fave Item's Code"
+          ng-model="myinfo.user.fave"
+          required minlength="2" ng-maxLength="4">
+      </div> -->
+
+    </form>
+  </fieldset>
+
+  <div id="userSpan" class="text-center" ng-if="myinfo.isSigned();">Favorite Menu Item:</div><br>
+  <div class="menu-item-tile col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" ng-if="myinfo.isSigned();">
+    <div id="faveItem" class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div>{{myinfo.fave.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{myinfo.basePath}}/images/{{myinfo.fave.short_name}}.jpg" alt="{{myinfo.fave.name}}">
+        </div>
+        <div class="menu-item-price">{{myinfo.fave.price_small | currency}}<span> {{myinfo.fave.small_portion_name}}</span> {{myinfo.fave.price_large | currency}} <span>{{myinfo.fave.large_portion_name}}</span></div>
+      </div>
+      <div class="menu-item-description col-sm-7">
+        <h3 class="menu-item-title">{{myinfo.fave.name}}</h3>
+        <p class="menu-item-details">{{myinfo.fave.description}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
